@@ -66,14 +66,14 @@ items = [NumberItem() for x in range(5)] + [SayHiItem() for x in range(5)]
 item_processor_that_processes_as_fast_as_possible = GenericRateLimitedItemProcessor(iterable=items)
 
 # this one's processing rate is limited to 1000 items in 1.25 seconds
-item_processor_with_rate_limited_to_1000_items_in_1.25_seconds = GenericRateLimitedItemProcessor(iterable=items,
+item_processor_with_rate_limited_to_1000_items_in_1_25_seconds = GenericRateLimitedItemProcessor(iterable=items,
                                                                                                  num_items=1000,
                                                                                                  num_seconds=1.25)
 
 
 # start processing!
 item_processor_that_processes_as_fast_as_possible.start()
-item_processor_with_rate_limited_to_1000_items_in_1.25_seconds.start()
+item_processor_with_rate_limited_to_1000_items_in_1_25_seconds.start()
 
 # wait for all items's start() to be called
 # if you want your items to be processed asynchronosuly, you should have your items
@@ -82,7 +82,7 @@ item_processor_with_rate_limited_to_1000_items_in_1.25_seconds.start()
 # processor could be delayed and your item processor will not appear to be processing
 # at the rate you think it should be processing at
 item_processor_that_processes_as_fast_as_possible.join()
-item_processor_with_rate_limited_to_1000_items_in_1.25_seconds.join()
+item_processor_with_rate_limited_to_1000_items_in_1_25_seconds.join()
 
 # the items where calling start() raised an exception are collected in this deque
 problem_items = item_processor_that_processes_as_fast_as_possible.unsuccessfully_started
