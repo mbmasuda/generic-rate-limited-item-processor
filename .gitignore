@@ -127,3 +127,16 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# emacs stuff
+*~
+\#*\#
+
+# Mac stuff
+.DS_Store
+
+# pytest stuff
+.pytest_cache/
+
+# flake8 config
+.flake8
